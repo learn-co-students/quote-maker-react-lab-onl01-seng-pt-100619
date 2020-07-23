@@ -10,7 +10,7 @@ class QuoteForm extends Component {
     //set up a controlled form with internal state
     content: '',
     author: '',
-    id: uuid,
+    // id: uuid,
     votes: 0
   }
 
@@ -28,11 +28,10 @@ class QuoteForm extends Component {
     // Pass quote object to action creator
     // Update component state to return to default state
     event.preventDefault()
-    this.props.addQuote(this.state)
+    this.props.addQuote({...this.state, id: uuid()})
     this.setState({
       content: '',
       author: '',
-      id: uuid,
       votes: 0
     })
     // console.log(this.state)
@@ -55,7 +54,7 @@ class QuoteForm extends Component {
                         name="content"
                         value={this.state.content}
                       />
-                      {/* {console.log(this.state.content)} */}
+                      {this.state.content}
                     </div>
                   </div>
                   <div className="form-group">
