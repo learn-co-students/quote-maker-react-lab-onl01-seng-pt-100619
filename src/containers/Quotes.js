@@ -39,14 +39,14 @@ class Quotes extends Component {
 }
 
 //add arguments to connect as needed
-// const mapDispatchToProps = {
-//   removeQuote,
-//   upvoteQuote,
-//   downvoteQuote
-// }
+const mapDispatchToProps = {
+  removeQuote,
+  upvoteQuote,
+  downvoteQuote
+}
 
-// const mapStateToProps = state => {
-//   return state
-// }
+const mapStateToProps = state => {
+  return state
+}
 
 export default connect()(Quotes);
