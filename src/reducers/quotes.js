@@ -10,16 +10,16 @@ const quotes = (state = [], action) => {
     case 'REMOVE_QUOTE':
       return state.filter(quote => quote.id !== action.quoteId)
     case 'UPVOTE_QUOTE':
-      const quoteObj = state.find(quote => quote.id === action.quoteId)
+      const quoteIndex = state.findIndex(quote => quote.id === action.quoteId)
+      const quoteObj = state[quoteIndex]
       quoteObj.votes += 1
-      const revisedState = state.filter(quote => quote.id !== action.quoteId)  
-      return revisedState.concat(quoteObj)
+      return [...state.slice(0,quoteIndex), quoteObj, ...state.slice(quoteIndex+1)]
     case 'DOWNVOTE_QUOTE':
-      const quoteObj2 = state.find(quote => quote.id === action.quoteId)
+      const quoteIndex2 = state.findIndex(quote => quote.id === action.quoteId)
+      const quoteObj2 = state[quoteIndex2]
       if (quoteObj2.votes > 0) {
         quoteObj2.votes -= 1
-        const revisedState2 = state.filter(quote => quote.id !== action.quoteId)  
-        return revisedState2.concat(quoteObj2)
+        return [...state.slice(0,quoteIndex2), quoteObj2, ...state.slice(quoteIndex2+1)]
       } else {
         return state
       }
