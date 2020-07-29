@@ -5,6 +5,6 @@ switch(action.type){
  return [...state, action.quote]
   default: 
   return state 
- }
+}
 }
 

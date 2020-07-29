@@ -14,19 +14,3 @@ export const removeQuote = (quoteId) => {
         quoteId: quoteId
     }
 }
-
-export const upvoteQuote = (quoteId) => {
-    return {
-        type: 'UPVOTE_QUOTE',
-        quoteId: quoteId
-    }
-}
-
-export const downvoteQuote = (quoteId) => {
-    return {
-        type: 'DOWNVOTE_QUOTE',
-        quoteId: quoteId
-    }
-}
-
-

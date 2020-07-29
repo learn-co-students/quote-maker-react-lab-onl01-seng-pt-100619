@@ -76,7 +76,7 @@ class QuoteForm extends Component {
 
 const mapDispatchToProps = dispatch => {
  return {
-   addQuote: (quote) => dispatch(addQuote(quote))
+   addQuote: (quote) => addQuote(quote)
  }
 }
 
