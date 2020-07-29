@@ -24,13 +24,7 @@ class QuoteForm extends Component {
     // Create quote object from state
     const quote = {...this.state, id: uuid(), votes: 0}
     // Pass quote object to action creator
-    this.props.addQuote(quote)
     // Update component state to return to default state
-    this.setState({
-      content: '',
-      author: ''
-
-    })
   }
 
   render() {
@@ -76,7 +70,7 @@ class QuoteForm extends Component {
 
 const mapDispatchToProps = dispatch => {
  return {
-   addQuote: (quote) => dispatch(addQuote(quote))
+   addQuote: (quote) => addQuote(quote)
  }
 }
 
